@@ -190,8 +190,8 @@ export const wedding = {
      * Path to a music file in /public (e.g. "/audio/nikkah-theme.mp3").
      * Leave empty to use the built-in ambient chime melody.
      */
-    src: "",
-    title: "Ambient chimes",
+    src: "/New Sufi Kalam LamYati Nazeero Kafi Nazarin Misl e Tu Na Shud Paida Jana Sufi Seniyanz.mp3",
+    title: "Lam Yati Nazeero — Sufi Kalam",
   },
 
   rsvp: {
