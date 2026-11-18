@@ -82,6 +82,26 @@ export function LanternIntro({ onEnter }: { onEnter: () => void }) {
       />
       <GoldDust count={40} seed={21} />
 
+      {/* distant lanterns create a layered, cinematic entrance */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <motion.div
+          className="absolute left-[9%] top-[24%] opacity-45"
+          initial={{ y: 50, opacity: 0, rotate: -10, scale: 0.45 }}
+          animate={{ y: [0, -18, 0], opacity: [0.25, 0.65, 0.25], rotate: [-10, -4, -10], scale: 0.58 }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Lantern className="h-28 w-auto md:h-40" />
+        </motion.div>
+        <motion.div
+          className="absolute right-[8%] top-[34%] opacity-40"
+          initial={{ y: 35, opacity: 0, rotate: 9, scale: 0.4 }}
+          animate={{ y: [0, 16, 0], opacity: [0.2, 0.58, 0.2], rotate: [9, 3, 9], scale: 0.5 }}
+          transition={{ duration: 6.2, delay: 0.7, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Lantern className="h-24 w-auto md:h-36" />
+        </motion.div>
+      </div>
+
       {/* the flying lantern */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <motion.div
@@ -154,13 +174,6 @@ export function LanternIntro({ onEnter }: { onEnter: () => void }) {
         <p className="mt-2 font-script text-2xl text-gold-light/90">{wedding.brand.tagline}</p>
       </motion.div>
 
-      <button
-        type="button"
-        onClick={onEnter}
-        className="eyebrow glass absolute right-4 top-4 z-20 rounded-full px-4 py-2.5 text-[0.6rem] text-gold-light transition-colors hover:border-gold hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold md:right-8 md:top-8"
-      >
-        Skip intro
-      </button>
     </motion.div>
   );
 }
